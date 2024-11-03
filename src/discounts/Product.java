@@ -6,23 +6,23 @@ public class Product {
     double price;
     int discount;
     
-    public Product(String categoryId2, String productId2, double price) {
-        this.categoryId = categoryId2;
-        this.productId = productId2;
+    public Product(String categoryId, String productId, double price) {
+        this.categoryId = categoryId;
+        this.productId = productId;
         this.price = price;
         this.discount = 0;
     }
 
     public String getCategoryId() {
-        return categoryId;
+        return this.categoryId;
     }
 
     public String getProductId() {
-        return productId;
+        return this.productId;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setCategoryId(String categoryId) {
@@ -38,11 +38,16 @@ public class Product {
     }
 
     public int getDiscount() {
-        return discount;
+        return this.discount;
     }
 
     public void setDiscount(int discount) {
         this.discount = discount;
+    }
+
+    public double getDiscountedPrice() {
+        int p = 100 - this.discount;
+        return (this.price/100)*p;
     }
 
 }
